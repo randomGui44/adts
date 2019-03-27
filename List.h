@@ -22,6 +22,8 @@ class List //begin List definition
      
      /** MISSING OPERATIONS */
      //... fill in ....
+     int List::retrieveElement(int k);
+     void List::clearAll();
 
 };//end List definition
 

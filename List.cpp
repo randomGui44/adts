@@ -93,3 +93,34 @@ void List::remove(int k)
 	
 	//Implementations of missing operations
 	
+int List::retrieveElement(int k){
+	
+	if (k < 1 or k > num_elements)//if the location is invalid 
+	     throw out_of_range("List::remove(" +to_string(k)+") failed. (valid indices are 1 to "+to_string(num_elements)+")");//throw an "out_of_range" exception
+	     
+	if(k == 1)
+		return frontPtr->data;
+		
+	else {
+		
+		Node* tmpPtr = nullptr;
+		int location = 1;
+		
+		while(location != k-1){
+			
+			tmpPtr = tmpPtr->link;
+			location++;
+		}//End While
+		
+		Node* showPtr =  tmpPtr->link;
+		return showPtr->data;
+		
+	}//End Else
+	
+}//End retrieveElement
+
+void List::clearAll(){
+	
+	while(size()!=0)
+		remove(1);
+}//End clearAll
